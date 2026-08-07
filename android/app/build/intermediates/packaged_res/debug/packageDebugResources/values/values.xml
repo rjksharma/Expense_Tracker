@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">892908225242-tutf9r9ot557hqhuiekfsv6737bb55br.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">892908225242</string>
+    <string name="google_api_key" translatable="false">AIzaSyA5bCN9VE3xeyOlBeTbsAWSHy6tvAa1_jA</string>
+    <string name="google_app_id" translatable="false">1:892908225242:android:f1d808b2996844377c9be3</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA5bCN9VE3xeyOlBeTbsAWSHy6tvAa1_jA</string>
+    <string name="google_storage_bucket" translatable="false">spendly-8155f.firebasestorage.app</string>
+    <string name="project_id" translatable="false">spendly-8155f</string>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#7255E8</item>
+        <item name="android:navigationBarColor">#0F101B</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#0F101B</item>
+    </style>
+</resources>

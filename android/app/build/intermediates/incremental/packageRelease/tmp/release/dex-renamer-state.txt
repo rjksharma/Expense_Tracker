@@ -1,0 +1,10 @@
+#Thu Aug 06 23:10:39 IST 2026
+base.0=D\:\\Raj Kumar\\Documents\\Expense_Tracker\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes.dex
+base.1=D\:\\Raj Kumar\\Documents\\Expense_Tracker\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes2.dex
+base.2=D\:\\Raj Kumar\\Documents\\Expense_Tracker\\android\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\classes3.dex
+path.0=classes.dex
+path.1=classes2.dex
+path.2=classes3.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "892908225242",
+    "project_id": "spendly-8155f",
+    "storage_bucket": "spendly-8155f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892908225242:android:f1d808b2996844377c9be3",
+        "android_client_info": {
+          "package_name": "com.spendly.expensetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892908225242-12qeu9tn82qpmtikgfvkim9ejd549j7r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spendly.expensetracker",
+            "certificate_hash": "cb9d57a2867b5ca685e0786f3687764bbf272fde"
+          }
+        },
+        {
+          "client_id": "892908225242-cvf64q4odr8t32rd3rove7kescdav9t5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spendly.expensetracker",
+            "certificate_hash": "25f15ab8d18c5e1830e00febf58532fb67731475"
+          }
+        },
+        {
+          "client_id": "892908225242-tutf9r9ot557hqhuiekfsv6737bb55br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5bCN9VE3xeyOlBeTbsAWSHy6tvAa1_jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892908225242-tutf9r9ot557hqhuiekfsv6737bb55br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

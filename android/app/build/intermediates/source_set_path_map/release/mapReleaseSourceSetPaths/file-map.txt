@@ -1,0 +1,33 @@
+com.spendly.expensetracker.app-play-services-auth-21.3.0-0 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\0889d93c7588797c2377df4d1d3319be\workspace\transformed\play-services-auth-21.3.0\res
+com.spendly.expensetracker.app-core-common-2.0.3-1 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\104a7a9d09950b8842d245ae4ec4d6aa\workspace\transformed\core-common-2.0.3\res
+com.spendly.expensetracker.app-lifecycle-livedata-core-2.5.1-2 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\2d33da4d0ab3d90e8144add8caa73f1a\workspace\transformed\lifecycle-livedata-core-2.5.1\res
+com.spendly.expensetracker.app-appcompat-1.2.0-3 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\337345a960bbfe668c2ee1338df087f3\workspace\transformed\appcompat-1.2.0\res
+com.spendly.expensetracker.app-play-services-base-18.5.0-4 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\3de359681be25eda6d603cdcc37d94a1\workspace\transformed\play-services-base-18.5.0\res
+com.spendly.expensetracker.app-core-1.8.0-5 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\429fb4c828e8668c979485102bf0d89c\workspace\transformed\core-1.8.0\res
+com.spendly.expensetracker.app-credentials-play-services-auth-1.2.0-rc01-6 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\42c63bba7f3c92b353a75edcf8a210e9\workspace\transformed\credentials-play-services-auth-1.2.0-rc01\res
+com.spendly.expensetracker.app-datastore-preferences-release-7 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\4919ecbd1b1ba74927ba71d8e77d33a1\workspace\transformed\datastore-preferences-release\res
+com.spendly.expensetracker.app-lifecycle-viewmodel-2.5.1-8 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\4a374065c4a81be564158464ed31ce92\workspace\transformed\lifecycle-viewmodel-2.5.1\res
+com.spendly.expensetracker.app-browser-1.4.0-9 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\515cfaf73f7375be2dcd13ddc63ae07f\workspace\transformed\browser-1.4.0\res
+com.spendly.expensetracker.app-appcompat-resources-1.2.0-10 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\52f6c010fbee1e9651574141dd295df5\workspace\transformed\appcompat-resources-1.2.0\res
+com.spendly.expensetracker.app-datastore-release-11 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\644a6547a92deb45c7c5f7193bee4f29\workspace\transformed\datastore-release\res
+com.spendly.expensetracker.app-lifecycle-runtime-2.5.1-12 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\7834b5d507a07929a5ad3338ceb753ce\workspace\transformed\lifecycle-runtime-2.5.1\res
+com.spendly.expensetracker.app-biometric-1.1.0-13 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\82be1097298fd572c535fcf2b6e0265a\workspace\transformed\biometric-1.1.0\res
+com.spendly.expensetracker.app-credentials-1.2.0-rc01-14 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\8f421d8629e110b6853b7e7214cfaa8a\workspace\transformed\credentials-1.2.0-rc01\res
+com.spendly.expensetracker.app-firebase-common-22.0.1-15 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\94ae0a493e71b0ef43fe4185ca7f784e\workspace\transformed\firebase-common-22.0.1\res
+com.spendly.expensetracker.app-annotation-experimental-1.1.0-16 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\ae95baf546f071f3c0a41e44b4616fd5\workspace\transformed\annotation-experimental-1.1.0\res
+com.spendly.expensetracker.app-savedstate-1.2.0-17 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\b76ba4ec575ab8c522e53cf592fe157f\workspace\transformed\savedstate-1.2.0\res
+com.spendly.expensetracker.app-activity-1.5.1-18 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\b828c7910987ad082c04d2a114ffe33b\workspace\transformed\activity-1.5.1\res
+com.spendly.expensetracker.app-play-services-basement-18.8.0-19 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\bf1f7ef4208c091454aef17ba7c8d9f6\workspace\transformed\play-services-basement-18.8.0\res
+com.spendly.expensetracker.app-datastore-core-release-20 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\d58f13da3a201c65b4cfa3322e60cafa\workspace\transformed\datastore-core-release\res
+com.spendly.expensetracker.app-lifecycle-viewmodel-savedstate-2.5.1-21 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\de75cacf2bff93d67e90a3b22a3f98e1\workspace\transformed\lifecycle-viewmodel-savedstate-2.5.1\res
+com.spendly.expensetracker.app-datastore-preferences-core-release-22 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\e5fcedb7b7e6bd932a9a87a8e8fbb6f7\workspace\transformed\datastore-preferences-core-release\res
+com.spendly.expensetracker.app-fragment-1.5.7-23 C:\Users\Rajkumar\.gradle\caches\9.3.0\transforms\ff07826f871516f8153898b2b7661594\workspace\transformed\fragment-1.5.7\res
+com.spendly.expensetracker.app-pngs-24 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\generated\res\pngs\release
+com.spendly.expensetracker.app-res-25 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\generated\res\processReleaseGoogleServices
+com.spendly.expensetracker.app-resValues-26 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\generated\res\resValues\release
+com.spendly.expensetracker.app-updated_navigation_xml-27 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\generated\updated_navigation_xml\release
+com.spendly.expensetracker.app-packageReleaseResources-28 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.spendly.expensetracker.app-packageReleaseResources-29 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.spendly.expensetracker.app-release-30 D:\Raj Kumar\Documents\Expense_Tracker\android\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.spendly.expensetracker.app-main-31 D:\Raj Kumar\Documents\Expense_Tracker\android\app\src\main\res
+com.spendly.expensetracker.app-release-32 D:\Raj Kumar\Documents\Expense_Tracker\android\app\src\release\res

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    namespace 'com.spendly.expensetracker'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.spendly.expensetracker'
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName '1.0'
+    }
+}
+
+dependencies {
+    implementation 'androidx.biometric:biometric:1.1.0'
+    implementation platform('com.google.firebase:firebase-bom:34.7.0')
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.android.gms:play-services-auth:21.3.0'
+}
+
+tasks.register('syncWebAssets', Copy) {
+    from(rootProject.projectDir.parentFile) {
+        include 'index.html', 'styles.css', 'app.js', 'Spendly_icon.png', 'Spendly_logo.png', 'Spendly_logo_light.png'
+    }
+    into layout.projectDirectory.dir('src/main/assets')
+}
+preBuild.dependsOn(tasks.named('syncWebAssets'))
