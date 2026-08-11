@@ -28,4 +28,11 @@ tasks.register('syncWebAssets', Copy) {
     }
     into layout.projectDirectory.dir('src/main/assets')
 }
-preBuild.dependsOn(tasks.named('syncWebAssets'))
+tasks.register('syncAppIcon', Copy) {
+    from(rootProject.projectDir.parentFile) {
+        include 'Spendly_icon.png'
+        rename 'Spendly_icon.png', 'spendly_icon.png'
+    }
+    into layout.projectDirectory.dir('src/main/res/drawable')
+}
+preBuild.dependsOn(tasks.named('syncWebAssets'), tasks.named('syncAppIcon'))
