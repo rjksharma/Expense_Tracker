@@ -1,6 +1,11 @@
 package com.spendly.expensetracker;
 
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,10 +47,14 @@ public class MainActivity extends FragmentActivity {
     private SharedPreferences appPreferences;
     private static final int FILE_CHOOSER_REQUEST = 1001;
     private static final int GOOGLE_SIGN_IN_REQUEST = 1002;
+    private static final int NOTIFICATION_PERMISSION_REQUEST = 1003;
+    private static final int BACKUP_SAVE_REQUEST = 1004;
     private static final String FINGERPRINT_KEY = "fingerprint_unlock";
+    private static final String REMINDER_CHANNEL = "daily_reminders";
     private static final String ADMIN_EMAIL = "rjksharma23@gmail.com";
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
+    private String pendingBackupContent;
 
     @Override public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +130,8 @@ public class MainActivity extends FragmentActivity {
         @JavascriptInterface public boolean isFingerprintEnabled() { return appPreferences.getBoolean(FINGERPRINT_KEY, false); }
         @JavascriptInterface public void enableFingerprint() { runOnUiThread(() -> requestFingerprint(true)); }
         @JavascriptInterface public void disableFingerprint() { appPreferences.edit().putBoolean(FINGERPRINT_KEY, false).apply(); }
+        @JavascriptInterface public void enableDailyReminder() { runOnUiThread(() -> MainActivity.this.enableDailyReminder()); }
+        @JavascriptInterface public void showDailyReminder() { runOnUiThread(() -> MainActivity.this.showDailyReminder()); }
 
         @JavascriptInterface public String cloudUser() {
             FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -146,6 +157,39 @@ public class MainActivity extends FragmentActivity {
         }
         @JavascriptInterface public void backupCloud(String payload) { runOnUiThread(() -> backupCloudData(payload)); }
         @JavascriptInterface public void restoreCloud() { runOnUiThread(() -> restoreCloudData()); }
+        @JavascriptInterface public void downloadBackup(String filename, String mimeType, String content) { runOnUiThread(() -> saveBackup(filename, mimeType, content)); }
+    }
+
+    private void saveBackup(String filename, String mimeType, String content) {
+        pendingBackupContent = content;
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType(mimeType);
+        intent.putExtra(Intent.EXTRA_TITLE, filename);
+        startActivityForResult(intent, BACKUP_SAVE_REQUEST);
+    }
+
+    private void enableDailyReminder() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.POST_NOTIFICATIONS}, NOTIFICATION_PERMISSION_REQUEST);
+            return;
+        }
+        callbackReminder(true, "Daily reminder enabled.");
+    }
+
+    private void showDailyReminder() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) return;
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) manager.createNotificationChannel(new NotificationChannel(REMINDER_CHANNEL, "Daily reminders", NotificationManager.IMPORTANCE_DEFAULT));
+        android.app.Notification.Builder builder = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
+                ? new android.app.Notification.Builder(this, REMINDER_CHANNEL)
+                : new android.app.Notification.Builder(this);
+        manager.notify(2001, builder.setSmallIcon(R.drawable.spendly_icon).setContentTitle("Spendly reminder").setContentText("Did you spend anything today? Add it before you forget.").setAutoCancel(true).build());
+    }
+
+    private void callbackReminder(boolean enabled, String message) {
+        String safe = message.replace("'", "\\'");
+        webView.evaluateJavascript("window.onReminderResult && window.onReminderResult(" + enabled + ", '" + safe + "')", null);
     }
 
     private void startGoogleSignIn() {
@@ -230,9 +274,28 @@ public class MainActivity extends FragmentActivity {
             fileCallback = null;
         }
         if (requestCode == GOOGLE_SIGN_IN_REQUEST && resultCode == RESULT_OK && data != null) finishGoogleSignIn(data);
+        if (requestCode == BACKUP_SAVE_REQUEST) {
+            if (resultCode == RESULT_OK && data != null && data.getData() != null && pendingBackupContent != null) {
+                try (java.io.OutputStream stream = getContentResolver().openOutputStream(data.getData())) {
+                    stream.write(pendingBackupContent.getBytes(java.nio.charset.StandardCharsets.UTF_8));
+                    webView.evaluateJavascript("window.onBackupSaved && window.onBackupSaved(true)", null);
+                } catch (Exception error) { webView.evaluateJavascript("window.onBackupSaved && window.onBackupSaved(false)", null); }
+            }
+            pendingBackupContent = null;
+        }
+    }
+
+    @Override public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == NOTIFICATION_PERMISSION_REQUEST) callbackReminder(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED, grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED ? "Daily reminder enabled." : "Notification permission was not granted.");
     }
 
     @Override public void onBackPressed() {
-        if (webView.canGoBack()) webView.goBack(); else super.onBackPressed();
+        webView.evaluateJavascript("(function(){return window.handleAppBack ? window.handleAppBack() : false})()", handled -> {
+            if (!"true".equals(handled)) {
+                if (webView.canGoBack()) webView.goBack();
+                else MainActivity.super.onBackPressed();
+            }
+        });
     }
 }

@@ -8343,10 +8343,10 @@
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "55",
+                        "startOffsets": "57",
                         "endLines": "8",
                         "endColumns": "12",
-                        "endOffsets": "440"
+                        "endOffsets": "448"
                     },
                     "to": {
                         "startLines": "392",

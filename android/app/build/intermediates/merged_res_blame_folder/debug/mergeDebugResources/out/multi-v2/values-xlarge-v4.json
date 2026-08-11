@@ -4,7 +4,7 @@
             "outputFile": "com.spendly.expensetracker.app-mergeDebugResources-27:/values-xlarge-v4/values-xlarge-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Rajkumar\\.gradle\\caches\\8.14.3\\transforms\\88fb9f246c125e984e59ee69d36406cf\\transformed\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
+                    "source": "C:\\Users\\Rajkumar\\.gradle\\caches\\9.3.0\\transforms\\337345a960bbfe668c2ee1338df087f3\\workspace\\transformed\\appcompat-1.2.0\\res\\values-xlarge-v4\\values-xlarge-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7",
                         "startColumns": "4,4,4,4,4,4",
